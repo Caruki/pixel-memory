@@ -1,11 +1,12 @@
 <div
-  (click)="onCardClick(card)"
-  title="{{ card.title }}"
   [ngClass]="{
     'card-container': true,
     'visible-mode': card.visible,
-    'hidden-mode': !card.visible
+    'hidden-mode': !card.visible,
+    'flex-item': true
   }"
+  title="{{ card.title }}"
+  (click)="onCardClick(card)"
 >
   <img class="img" src="{{ card.img }}" />
 </div>

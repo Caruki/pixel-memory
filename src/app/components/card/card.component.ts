@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CardService } from 'src/app/services/card.service';
 
 import { Card } from '../../models/card';
 
@@ -10,15 +11,21 @@ import { Card } from '../../models/card';
 export class CardComponent implements OnInit {
   @Input() card: Card;
 
-  clickedFirst: string;
-  clickedSecond: string;
+  @Input() position: number;
 
-  constructor() {}
+  constructor(private cardService: CardService) {}
 
   ngOnInit(): void {}
 
   onCardClick(card: Card): void {
     card.visible = true;
     console.log(card.title, card.visible);
+
+    if (this.cardService.getFirstCard()) {
+      this.cardService.setSecondCard(card);
+      this.cardService.checkMatch();
+    } else {
+      this.cardService.setFirstCard(card);
+    }
   }
 }

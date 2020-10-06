@@ -10,11 +10,15 @@ import { Card } from '../../models/card';
 export class CardComponent implements OnInit {
   @Input() card: Card;
 
+  clickedFirst: string;
+  clickedSecond: string;
+
   constructor() {}
 
   ngOnInit(): void {}
 
   onCardClick(card: Card): void {
-    console.log(card.title);
+    card.visible = true;
+    console.log(card.title, card.visible);
   }
 }

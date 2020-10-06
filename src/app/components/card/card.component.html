@@ -1,7 +1,11 @@
 <div
   (click)="onCardClick(card)"
   title="{{ card.title }}"
-  class="card-container"
+  [ngClass]="{
+    'card-container': true,
+    'visible-mode': card.visible,
+    'hidden-mode': !card.visible
+  }"
 >
   <img class="img" src="{{ card.img }}" />
 </div>

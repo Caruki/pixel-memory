@@ -1,0 +1,215 @@
+{
+  "cardList": [
+    {
+      "id": 1,
+      "title": "paw",
+      "visible": false,
+      "img": "../../../assets/imgs/skill_icons1.png",
+      "disabled": false
+    },
+    {
+      "id": 2,
+      "title": "hammer",
+      "visible": false,
+      "img": "../../../assets/imgs/skill_icons2.png",
+      "disabled": false
+    },
+    {
+      "id": 3,
+      "title": "eye",
+      "visible": false,
+      "img": "../../../assets/imgs/skill_icons6.png",
+      "disabled": false
+    },
+    {
+      "id": 4,
+      "title": "poison-blade",
+      "visible": false,
+      "img": "../../../assets/imgs/skill_icons8.png",
+      "disabled": false
+    },
+    {
+      "id": 5,
+      "title": "poison-arrow",
+      "visible": false,
+      "img": "../../../assets/imgs/skill_icons9.png",
+      "disabled": false
+    },
+    {
+      "id": 6,
+      "title": "red-blade",
+      "visible": false,
+      "img": "../../../assets/imgs/skill_icons14.png",
+      "disabled": false
+    },
+    {
+      "id": 7,
+      "title": "rage",
+      "visible": false,
+      "img": "../../../assets/imgs/skill_icons15.png",
+      "disabled": false
+    },
+    {
+      "id": 8,
+      "title": "red-heart",
+      "visible": false,
+      "img": "../../../assets/imgs/skill_icons16.png",
+      "disabled": false
+    },
+    {
+      "id": 9,
+      "title": "bleeding",
+      "visible": false,
+      "img": "../../../assets/imgs/skill_icons17.png",
+      "disabled": false
+    },
+    {
+      "id": 10,
+      "title": "ice",
+      "visible": false,
+      "img": "../../../assets/imgs/skill_icons19.png",
+      "disabled": false
+    },
+    {
+      "id": 11,
+      "title": "sneak",
+      "visible": false,
+      "img": "../../../assets/imgs/skill_icons20.png",
+      "disabled": false
+    },
+    {
+      "id": 12,
+      "title": "shield",
+      "visible": false,
+      "img": "../../../assets/imgs/skill_icons22.png",
+      "disabled": false
+    },
+    {
+      "id": 13,
+      "title": "thunder",
+      "visible": false,
+      "img": "../../../assets/imgs/skill_icons23.png",
+      "disabled": false
+    },
+
+    {
+      "id": 14,
+      "title": "wolf",
+      "visible": false,
+      "img": "../../../assets/imgs/skill_icons25.png",
+      "disabled": false
+    },
+    {
+      "id": 15,
+      "title": "speed",
+      "visible": false,
+      "img": "../../../assets/imgs/skill_icons30.png",
+      "disabled": false
+    },
+    {
+      "id": 16,
+      "title": "paw",
+      "visible": false,
+      "img": "../../../assets/imgs/skill_icons1.png",
+      "disabled": false
+    },
+    {
+      "id": 17,
+      "title": "hammer",
+      "visible": false,
+      "img": "../../../assets/imgs/skill_icons2.png",
+      "disabled": false
+    },
+    {
+      "id": 18,
+      "title": "eye",
+      "visible": false,
+      "img": "../../../assets/imgs/skill_icons6.png",
+      "disabled": false
+    },
+    {
+      "id": 19,
+      "title": "poison-blade",
+      "visible": false,
+      "img": "../../../assets/imgs/skill_icons8.png",
+      "disabled": false
+    },
+    {
+      "id": 20,
+      "title": "poison-arrow",
+      "visible": false,
+      "img": "../../../assets/imgs/skill_icons9.png",
+      "disabled": false
+    },
+    {
+      "id": 21,
+      "title": "red-blade",
+      "visible": false,
+      "img": "../../../assets/imgs/skill_icons14.png",
+      "disabled": false
+    },
+    {
+      "id": 22,
+      "title": "rage",
+      "visible": false,
+      "img": "../../../assets/imgs/skill_icons15.png",
+      "disabled": false
+    },
+    {
+      "id": 23,
+      "title": "red-heart",
+      "visible": false,
+      "img": "../../../assets/imgs/skill_icons16.png",
+      "disabled": false
+    },
+    {
+      "id": 24,
+      "title": "bleeding",
+      "visible": false,
+      "img": "../../../assets/imgs/skill_icons17.png",
+      "disabled": false
+    },
+    {
+      "id": 25,
+      "title": "ice",
+      "visible": false,
+      "img": "../../../assets/imgs/skill_icons19.png",
+      "disabled": false
+    },
+    {
+      "id": 26,
+      "title": "sneak",
+      "visible": false,
+      "img": "../../../assets/imgs/skill_icons20.png",
+      "disabled": false
+    },
+    {
+      "id": 27,
+      "title": "shield",
+      "visible": false,
+      "img": "../../../assets/imgs/skill_icons22.png",
+      "disabled": false
+    },
+    {
+      "id": 28,
+      "title": "thunder",
+      "visible": false,
+      "img": "../../../assets/imgs/skill_icons23.png",
+      "disabled": false
+    },
+    {
+      "id": 29,
+      "title": "wolf",
+      "visible": false,
+      "img": "../../../assets/imgs/skill_icons25.png",
+      "disabled": false
+    },
+    {
+      "id": 30,
+      "title": "speed",
+      "visible": false,
+      "img": "../../../assets/imgs/skill_icons30.png",
+      "disabled": false
+    }
+  ]
+}

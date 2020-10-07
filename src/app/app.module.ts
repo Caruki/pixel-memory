@@ -7,9 +7,10 @@ import { CardComponent } from './components/card/card.component';
 import { CardGridComponent } from './components/card-grid/card-grid.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { PlayerOverviewComponent } from './components/player-overview/player-overview.component';
 
 @NgModule({
-  declarations: [AppComponent, CardComponent, CardGridComponent],
+  declarations: [AppComponent, CardComponent, CardGridComponent, PlayerOverviewComponent],
   imports: [BrowserModule, AppRoutingModule, CommonModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]

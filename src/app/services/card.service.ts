@@ -1,14 +1,35 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { catchError, tap } from 'rxjs/operators';
+import { Card } from '../models/card';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CardService {
-  constructor() {}
+  constructor(private http: HttpClient) {}
+
+  cardsUrl: string = '/api/cards';
 
   clickedFirst: string = '';
   clickedSecond: string = '';
   isMatch: boolean = false;
+  cardListLength: number;
+
+  handleError() {
+    console.log('something went wrong');
+  }
+
+  getAllCards(): Observable<Card[]> {
+    return this.http.get<Card[]>(this.cardsUrl);
+  }
+
+  getCardListLength() {
+    return this.getAllCards().subscribe((cards) => {
+      this.cardListLength = cards.length;
+    });
+  }
 
   setFirstCard(card) {
     this.clickedFirst = card.title;

@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --proxy-config proxy.conf.json",
-    "start:prod": "node server.js",
-    "postinstall": "ng build --output-path pixel-memory --aot --prod",
+    "start dev": "ng serve --proxy-config proxy.conf.json",
+    "start": "node server.js",
+    "postinstall": "ng build --aot --prod",
     "build": "ng build",
     "test": "ng test",
     "lint": "tsc --noEmit && eslint . --ext js,ts,json --quiet --fix",

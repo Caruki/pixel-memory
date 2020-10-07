@@ -1,1 +1,6 @@
-<p>welcome works!</p>
+<form>
+  <label for="player-count">How many players?</label>
+  <input id="player-count" [playerCount]="playerCount" type="number" />
+  <app-playerForm *ngFor="let player of playerCount"></app-playerForm>
+  <button type="submit">Start Game</button>
+</form>

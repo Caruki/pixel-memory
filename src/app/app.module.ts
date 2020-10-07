@@ -10,9 +10,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { PlayerOverviewComponent } from './components/player-overview/player-overview.component';
 import { HeaderComponent } from './components/header/header.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { PlayerFormComponent } from './components/player-form/player-form.component';
 
 @NgModule({
-  declarations: [AppComponent, CardComponent, CardGridComponent, PlayerOverviewComponent, HeaderComponent, WelcomeComponent],
+  declarations: [AppComponent, CardComponent, CardGridComponent, PlayerOverviewComponent, HeaderComponent, WelcomeComponent, PlayerFormComponent],
   imports: [BrowserModule, AppRoutingModule, CommonModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]

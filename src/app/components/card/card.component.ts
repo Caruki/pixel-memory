@@ -1,4 +1,6 @@
+import { ThrowStmt } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
+import { BoardService } from 'src/app/services/board.service';
 import { CardService } from 'src/app/services/card.service';
 
 import { Card } from '../../models/card';
@@ -13,7 +15,10 @@ export class CardComponent implements OnInit {
 
   @Input() position: number;
 
-  constructor(private cardService: CardService) {}
+  constructor(
+    private cardService: CardService,
+    public boardService: BoardService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -22,6 +27,9 @@ export class CardComponent implements OnInit {
     if (this.cardService.getFirstCard()) {
       this.cardService.setSecondCard(card);
       this.cardService.checkMatch();
+      if (!this.cardService.isMatch) {
+        this.cardService.hideCards();
+      }
     } else {
       this.cardService.setFirstCard(card);
     }

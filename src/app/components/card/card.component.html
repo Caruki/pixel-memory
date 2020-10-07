@@ -1,12 +1,13 @@
-<div
+<button
   [ngClass]="{
     'card-container': true,
     'visible-mode': card.visible,
     'hidden-mode': !card.visible,
     'flex-item': true
   }"
+  [disabled]="boardService.lockedBoard"
   title="{{ card.title }}"
   (click)="onCardClick(card)"
 >
   <img class="img" src="{{ card.img }}" />
-</div>
+</button>

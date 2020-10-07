@@ -4,12 +4,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, tap } from 'rxjs/operators';
 import { Card } from '../models/card';
 import { clear } from 'console';
+import { BoardService } from './board.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CardService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private boardService: BoardService) {}
 
   cardsUrl: string = '/api/cards';
 
@@ -49,6 +50,7 @@ export class CardService {
   }
 
   checkMatch() {
+    this.boardService.toggleLock();
     if (this.clickedFirst.title === this.clickedSecond.title) {
       this.isMatch = true;
       console.log(
@@ -71,7 +73,6 @@ export class CardService {
         'ismatch?',
         this.isMatch
       );
-      this.hideCards();
     }
 
     return this.isMatch;
@@ -83,6 +84,7 @@ export class CardService {
       this.clickedSecond.visible = false;
       this.clickedFirst = undefined;
       this.clickedSecond = undefined;
+      this.boardService.toggleLock();
     }, 1000);
   }
 }

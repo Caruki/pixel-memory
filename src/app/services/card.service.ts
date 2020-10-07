@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError, tap } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 import { Card } from '../models/card';
-import { clear } from 'console';
 import { BoardService } from './board.service';
 import { PlayerService } from './player.service';
 

@@ -71,6 +71,7 @@ export class CardService {
       );
       this.clickedFirst = undefined;
       this.clickedSecond = undefined;
+      this.boardService.toggleLock();
     } else {
       this.isMatch = false;
       console.log(

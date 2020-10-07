@@ -5,7 +5,7 @@
     'hidden-mode': !card.visible,
     'flex-item': true
   }"
-  [disabled]="boardService.lockedBoard"
+  [disabled]="boardService.lockedBoard || card.visible"
   title="{{ card.title }}"
   (click)="onCardClick(card)"
 >

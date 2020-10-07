@@ -1,8 +1,8 @@
 <div class="flex-container">
   <app-card
+    *ngFor="let card of cardList | async; let i = index"
     [style.order]="positionArray[i]"
     [card]="card"
-    *ngFor="let card of cardList; let i = index"
   >
   </app-card>
 </div>

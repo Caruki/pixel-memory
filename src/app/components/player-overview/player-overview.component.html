@@ -1,0 +1,10 @@
+<div class="container">
+  <h2 [ngClass]="{ 'active': playerService.playerOne.active }">
+    Player One, Name: {{ playerService.playerOne.name }}
+  </h2>
+  <span>Points:</span>{{ playerService.playerOne.points }}
+  <h2 [ngClass]="{ 'active': playerService.playerTwo.active }">
+    Player Two, Name: {{ playerService.playerTwo.name }}
+  </h2>
+  <span>Points:</span>{{ playerService.playerTwo.points }}
+</div>

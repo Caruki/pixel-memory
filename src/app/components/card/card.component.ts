@@ -1,7 +1,9 @@
 import { ThrowStmt } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
+
 import { BoardService } from 'src/app/services/board.service';
 import { CardService } from 'src/app/services/card.service';
+import { PlayerService } from 'src/app/services/player.service';
 
 import { Card } from '../../models/card';
 

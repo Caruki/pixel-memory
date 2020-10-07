@@ -1,16 +1,21 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, tap } from 'rxjs/operators';
 import { Card } from '../models/card';
 import { clear } from 'console';
 import { BoardService } from './board.service';
+import { PlayerService } from './player.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CardService {
-  constructor(private http: HttpClient, private boardService: BoardService) {}
+  constructor(
+    private http: HttpClient,
+    private boardService: BoardService,
+    private playerService: PlayerService
+  ) {}
 
   cardsUrl: string = '/api/cards';
 
@@ -18,6 +23,8 @@ export class CardService {
   clickedSecond: Card;
   isMatch: boolean = false;
   cardListLength: number;
+
+  matchedCards = new BehaviorSubject(0);
 
   handleError() {
     console.log('something went wrong');
@@ -53,6 +60,7 @@ export class CardService {
     this.boardService.toggleLock();
     if (this.clickedFirst.title === this.clickedSecond.title) {
       this.isMatch = true;
+      this.playerService.incPlayerPoints();
       console.log(
         'first:',
         this.clickedFirst.title,
@@ -63,6 +71,7 @@ export class CardService {
       );
       this.clickedFirst = undefined;
       this.clickedSecond = undefined;
+      this.boardService.toggleLock();
     } else {
       this.isMatch = false;
       console.log(
@@ -80,11 +89,12 @@ export class CardService {
 
   hideCards() {
     setTimeout(() => {
+      this.playerService.switchPlayer();
       this.clickedFirst.visible = false;
       this.clickedSecond.visible = false;
       this.clickedFirst = undefined;
       this.clickedSecond = undefined;
       this.boardService.toggleLock();
-    }, 1000);
+    }, 550);
   }
 }

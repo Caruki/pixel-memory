@@ -1,25 +1,16 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-}
-
 .app-container {
   display: flex;
   flex-flow: row;
-  flex-wrap: nowrap;
-  width: 100vw;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: auto;
   height: 100vh;
 }
 
 .card-grid {
-  width: 70%;
+  max-width: 770px;
 }
-.player-overview {
-  width: 30%;
+
+.header {
+  width: 100%;
 }

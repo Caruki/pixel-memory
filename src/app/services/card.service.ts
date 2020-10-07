@@ -3,6 +3,7 @@ import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, tap } from 'rxjs/operators';
 import { Card } from '../models/card';
+import { clear } from 'console';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,8 @@ export class CardService {
 
   cardsUrl: string = '/api/cards';
 
-  clickedFirst: string = '';
-  clickedSecond: string = '';
+  clickedFirst: Card;
+  clickedSecond: Card;
   isMatch: boolean = false;
   cardListLength: number;
 
@@ -32,7 +33,7 @@ export class CardService {
   }
 
   setFirstCard(card) {
-    this.clickedFirst = card.title;
+    this.clickedFirst = card;
   }
 
   getFirstCard() {
@@ -40,7 +41,7 @@ export class CardService {
   }
 
   setSecondCard(card) {
-    this.clickedSecond = card.title;
+    this.clickedSecond = card;
   }
 
   getSecondCard() {
@@ -48,32 +49,40 @@ export class CardService {
   }
 
   checkMatch() {
-    if (this.clickedFirst === this.clickedSecond) {
+    if (this.clickedFirst.title === this.clickedSecond.title) {
       this.isMatch = true;
       console.log(
         'first:',
-        this.clickedFirst,
+        this.clickedFirst.title,
         'second:',
-        this.clickedSecond,
+        this.clickedSecond.title,
         'ismatch?',
         this.isMatch
       );
-      this.clickedFirst = '';
-      this.clickedSecond = '';
+      this.clickedFirst = undefined;
+      this.clickedSecond = undefined;
     } else {
+      this.isMatch = false;
       console.log(
         'first:',
-        this.clickedFirst,
+        this.clickedFirst.title,
         'second:',
-        this.clickedSecond,
+        this.clickedSecond.title,
         'ismatch?',
         this.isMatch
       );
-      this.isMatch = false;
-      this.clickedFirst = '';
-      this.clickedSecond = '';
+      this.hideCards();
     }
 
     return this.isMatch;
+  }
+
+  hideCards() {
+    setTimeout(() => {
+      this.clickedFirst.visible = false;
+      this.clickedSecond.visible = false;
+      this.clickedFirst = undefined;
+      this.clickedSecond = undefined;
+    }, 1000);
   }
 }

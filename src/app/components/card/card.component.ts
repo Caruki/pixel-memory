@@ -19,8 +19,6 @@ export class CardComponent implements OnInit {
 
   onCardClick(card: Card): void {
     card.visible = true;
-    console.log(card.title, card.visible);
-
     if (this.cardService.getFirstCard()) {
       this.cardService.setSecondCard(card);
       this.cardService.checkMatch();

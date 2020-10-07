@@ -89,11 +89,12 @@ export class CardService {
 
   hideCards() {
     setTimeout(() => {
+      this.playerService.switchPlayer();
       this.clickedFirst.visible = false;
       this.clickedSecond.visible = false;
       this.clickedFirst = undefined;
       this.clickedSecond = undefined;
       this.boardService.toggleLock();
-    }, 1000);
+    }, 550);
   }
 }

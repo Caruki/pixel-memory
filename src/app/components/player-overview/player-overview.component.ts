@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Player } from 'src/app/models/player';
 
 import { CardService } from 'src/app/services/card.service';
 import { PlayerService } from 'src/app/services/player.service';
@@ -11,5 +12,19 @@ import { PlayerService } from 'src/app/services/player.service';
 export class PlayerOverviewComponent implements OnInit {
   constructor(public playerService: PlayerService) {}
 
-  ngOnInit(): void {}
+  playerOne: Player = {
+    name: 'One',
+    points: 0,
+    active: true
+  };
+
+  playerTwo: Player = {
+    name: 'Two',
+    points: 0,
+    active: false
+  };
+
+  ngOnInit(): void {
+    this.playerService.initPlayers(this.playerOne, this.playerTwo);
+  }
 }

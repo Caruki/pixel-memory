@@ -12,16 +12,19 @@
       max="4"
     />
     <button [disabled]="!playerCount" type="submit">Submit</button>
+
   </form>
   <form class="start-form" (ngSubmit)="startGame()">
     <app-player-form
       (inputName)="setName($event)"
-      *ngFor="let player of playerService.PlayerList; let i = index"
+      *ngFor="let player of playerService.playerList; let i = index"
       [title]="i"
       class="player-form"
     ></app-player-form>
+
     <button [disabled]="!playerService.PlayerList" type="submit">
       Start Game
     </button>
+
   </form>
 </div>

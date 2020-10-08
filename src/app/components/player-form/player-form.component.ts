@@ -15,22 +15,22 @@ export class PlayerFormComponent implements OnInit {
 
   @Input() title: number;
 
-  onNameInput() {
+  onNameInput(event) {
     switch (this.title) {
       case 0:
-        this.playerService.PlayerList[0].name = this.playerName;
+        this.playerService.playerList[0].name = this.playerName;
         break;
       case 1:
-        this.playerService.PlayerList[1].name = this.playerName;
+        this.playerService.playerList[1].name = this.playerName;
         break;
       case 2:
-        this.playerService.PlayerList[2].name = this.playerName;
+        this.playerService.playerList[2].name = this.playerName;
         break;
       case 3:
-        this.playerService.PlayerList[3].name = this.playerName;
+        this.playerService.playerList[3].name = this.playerName;
         break;
       case 4:
-        this.playerService.PlayerList[4].name = this.playerName;
+        this.playerService.playerList[4].name = this.playerName;
         break;
       default:
     }

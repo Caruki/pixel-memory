@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
+import { Component, OnInit } from '@angular/core';
 import { BoardService } from 'src/app/services/board.service';
 import { PlayerService } from 'src/app/services/player.service';
 
@@ -24,12 +23,10 @@ export class WelcomeComponent implements OnInit {
 
   onSubmit() {
     this.playerService.initPlayers(this.playerCount);
-    console.log(this.playerService.PlayerList);
   }
 
   startGame() {
-    this.playerService.PlayerList[0].active = true;
+    this.playerService.playerList[0].active = true;
     this.boardService.toggleShow();
-    console.log(this.playerService.PlayerList);
   }
 }

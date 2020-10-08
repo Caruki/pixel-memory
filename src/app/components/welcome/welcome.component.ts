@@ -23,12 +23,10 @@ export class WelcomeComponent implements OnInit {
 
   onSubmit() {
     this.playerService.initPlayers(this.playerCount);
-    console.log(this.playerService.playerList);
   }
 
   startGame() {
     this.playerService.playerList[0].active = true;
     this.boardService.toggleShow();
-    console.log(this.playerService.playerList);
   }
 }

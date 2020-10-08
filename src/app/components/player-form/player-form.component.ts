@@ -15,7 +15,7 @@ export class PlayerFormComponent implements OnInit {
 
   @Input() title: number;
 
-  onNameInput() {
+  onNameInput(event) {
     switch (this.title) {
       case 0:
         this.playerService.playerList[0].name = this.playerName;

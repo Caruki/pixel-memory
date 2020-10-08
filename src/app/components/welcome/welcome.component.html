@@ -2,7 +2,6 @@
   <form class="intro-form" (ngSubmit)="onSubmit()">
     <label for="player-count">How many players?</label>
     <input
-      [disabled]="disabledInput"
       id="player-count"
       [(ngModel)]="playerCount"
       name="player-count"
@@ -10,7 +9,7 @@
       min="0"
       max="4"
     />
-    <button [disabled]="disabledBtn" type="submit">Submit</button>
+    <button type="submit">Submit</button>
     <button [disabled]="!playerService.playerCount" type="reset">
       Reset Players
     </button>
@@ -22,6 +21,6 @@
       [title]="i"
       class="player-form"
     ></app-player-form>
-    <button [disabled]="disabledBtn" type="submit">Start Game</button>
+    <button type="submit">Start Game</button>
   </form>
 </div>

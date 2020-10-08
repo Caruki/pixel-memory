@@ -3,7 +3,7 @@
   <form class="intro-form" (ngSubmit)="onSubmit()">
     <label for="player-count">How many players are participating?</label>
     <input
-      [disabled]="playerService.PlayerList"
+      [disabled]="playerService.playerList[0]"
       id="player-count"
       [(ngModel)]="playerCount"
       name="player-count"
@@ -12,7 +12,6 @@
       max="4"
     />
     <button [disabled]="!playerCount" type="submit">Submit</button>
-
   </form>
   <form class="start-form" (ngSubmit)="startGame()">
     <app-player-form
@@ -22,9 +21,8 @@
       class="player-form"
     ></app-player-form>
 
-    <button [disabled]="!playerService.PlayerList" type="submit">
+    <button *ngIf="playerService.playerList[0]" type="submit">
       Start Game
     </button>
-
   </form>
 </div>

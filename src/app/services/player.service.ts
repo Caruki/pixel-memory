@@ -8,13 +8,9 @@ import { Player, IPlayer } from '../models/player';
 export class PlayerService {
   constructor() {}
 
-  activePlayer: string;
-
   playerCount: number;
 
   playerList: Player[] = [];
-
-  points: number = 0;
 
   initPlayers(playerCount) {
     for (let i = 1; i <= playerCount; i++) {

@@ -14,6 +14,7 @@ import { PlayerOverviewComponent } from './components/player-overview/player-ove
 import { HeaderComponent } from './components/header/header.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { PlayerFormComponent } from './components/player-form/player-form.component';
+import { PlayerDetailComponent } from './components/player-detail/player-detail.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PlayerFormComponent } from './components/player-form/player-form.compon
     PlayerOverviewComponent,
     HeaderComponent,
     WelcomeComponent,
-    PlayerFormComponent
+    PlayerFormComponent,
+    PlayerDetailComponent
   ],
   imports: [
     BrowserModule,

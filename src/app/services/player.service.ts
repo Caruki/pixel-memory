@@ -12,14 +12,14 @@ export class PlayerService {
 
   playerCount: number;
 
-  PlayerList: IPlayer[] = [];
+  playerList: IPlayer[] = [];
 
   points: number = 0;
 
   initPlayers(playerCount) {
     for (let i = 1; i <= playerCount; i++) {
       let player = new Player();
-      this.PlayerList.push(player);
+      this.playerList.push(player);
     }
   }
 

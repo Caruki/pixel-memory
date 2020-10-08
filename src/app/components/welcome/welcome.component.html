@@ -1,10 +1,27 @@
 <div class="container">
-  <form class="intro-form">
+  <form class="intro-form" (ngSubmit)="onSubmit()">
     <label for="player-count">How many players?</label>
-    <input id="player-count" [(playerCount)]="playerCount" type="number" />
-    <button type="submit">Start Game</button>
+    <input
+      [disabled]="disabledInput"
+      id="player-count"
+      [(ngModel)]="playerCount"
+      name="player-count"
+      type="number"
+      min="0"
+      max="4"
+    />
+    <button [disabled]="disabledBtn" type="submit">Submit</button>
+    <button [disabled]="!playerService.playerCount" type="reset">
+      Reset Players
+    </button>
   </form>
-
-  <!-- *ngFor="let player of playerCount"  -->
-  <app-player-form class="player-form"></app-player-form>
+  <form class="start-form" (ngSubmit)="startGame()">
+    <app-player-form
+      (inputName)="setName($event)"
+      *ngFor="let player of playerService.PlayerList; let i = index"
+      [title]="i"
+      class="player-form"
+    ></app-player-form>
+    <button [disabled]="disabledBtn" type="submit">Start Game</button>
+  </form>
 </div>

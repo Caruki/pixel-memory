@@ -1,0 +1,15 @@
+@use "../../../styles/typography" as font;
+@use "../../../styles/colors"  as colors;
+
+h1 {
+  color: colors.$font-color;
+  font-family: font.$libre-font;
+  text-align: center;
+  margin: 10px;
+}
+
+.container {
+  display: block;
+  background-color: colors.$bg-color;
+  padding: 10px;
+}

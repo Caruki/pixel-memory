@@ -1,21 +1,26 @@
 import { Injectable } from '@angular/core';
-import { Player } from '../models/player';
-import { CardService } from './card.service';
+import { Player, IPlayer } from '../models/player';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PlayerService {
   constructor() {}
-  playerOne: Player;
-  playerTwo: Player;
+  playerOne: IPlayer;
+  playerTwo: IPlayer;
   activePlayer: string;
+
+  playerCount: number;
+
+  PlayerList: IPlayer[] = [];
 
   points: number = 0;
 
-  initPlayers(playerOne, playerTwo) {
-    this.playerOne = playerOne;
-    this.playerTwo = playerTwo;
+  initPlayers(playerCount) {
+    for (let i = 1; i <= playerCount; i++) {
+      let player = new Player();
+      this.PlayerList.push(player);
+    }
   }
 
   switchPlayer() {

@@ -1,6 +1,8 @@
-<form>
-  <!-- player dynamisch -->
-  <label for="player">Player Name</label>
-  <input [(value)]="value" type="text" id="player" />
-  <button type="submit">Ok</button>
-</form>
+<input
+  [(ngModel)]="playerName"
+  name="player-name"
+  type="text"
+  id="player"
+  [title]="title"
+  (change)="onNameInput($event)"
+/>

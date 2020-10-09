@@ -1,7 +1,10 @@
 <div class="container">
-  Welcome to the pixel memory game, where you need to match game skills.
-  <form class="intro-form" (ngSubmit)="onSubmit()">
-    <label for="player-count">How many players are participating?</label>
+  <p class="welcome-text">
+    Welcome to the pixel memory game, where you need to match some awesome game
+    skills.
+  </p>
+  <form class="playercount-form" (ngSubmit)="onSubmit()">
+    <label for="player-count">How many players?</label>
     <input
       [disabled]="playerService.playerList[0]"
       id="player-count"
@@ -11,17 +14,20 @@
       min="0"
       max="4"
     />
-    <button [disabled]="!playerCount" type="submit">Submit</button>
+    <button id="btn-submit" [disabled]="!playerCount" type="submit">
+      Submit
+    </button>
   </form>
   <form class="start-form" (ngSubmit)="startGame()">
-    <app-player-form
-      (inputName)="setName($event)"
-      *ngFor="let player of playerService.playerList; let i = index"
-      [title]="i"
-      class="player-form"
-    ></app-player-form>
-
-    <button *ngIf="playerService.playerList[0]" type="submit">
+    <div class="playername-container">
+      <app-player-form
+        (inputName)="setName($event)"
+        *ngFor="let player of playerService.playerList; let i = index"
+        [title]="i"
+        class="player-form"
+      ></app-player-form>
+    </div>
+    <button id="btn-start" *ngIf="playerService.playerList[0]" type="submit">
       Start Game
     </button>
   </form>

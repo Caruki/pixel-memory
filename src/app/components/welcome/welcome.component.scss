@@ -1,22 +1,87 @@
+@use "../../../styles/typography" as font;
+@use "../../../styles/colors"  as colors;
+
 .container {
-  display: flex;
-  flex-flow: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   border: 2px black solid;
   padding: 20px;
 }
 
-.intro-form {
+.welcome-text {
+  grid-column: 1 / span 3;
+  grid-row: 1 / 2;
+  width: 100%;
+  flex-grow: 2;
+  text-align: center;
+  font-size: 1.1rem;
+  @media screen and (min-width: 900px) {
+    font-size: 1.3rem;
+    padding: 0px 120px;
+  }
+  font-family: font.$libre-font;
+  margin-top: 0;
+  margin-bottom: 10px;
+  align-self: flex-start;
+}
+
+.playercount-form {
+  grid-column: 1 / 1;
+  grid-row: 2 / 2;
   display: flex;
   flex-flow: column;
-  max-width: 200px;
+  text-align: center;
+  max-width: 250px;
+  margin-left: 20px;
+  font-family: font.$libre-font;
 
   > * {
-    margin: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
 }
 
-.player-form {
+.start-form {
+  grid-column: 2 / span 2;
+  grid-row: 2 / 2;
+  display: flex;
+  flex-flow: column;
+}
+
+.playername-container {
+  align-self: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
   flex-grow: 2;
-  margin: 10px;
+  align-self: flex-end;
+  margin-top: 15px;
+
+  > * {
+    margin: 5px;
+  }
+}
+
+#player-count {
+  width: 60%;
+  align-self: center;
+}
+
+#btn-submit {
+  padding: 5px;
+  align-self: center;
+  font-family: font.$libre-font;
+  background-color: colors.$btn-color-active;
+}
+
+#btn-submit:disabled {
+  background-color: colors.$btn-color-disabled;
+}
+
+#btn-start {
+  padding: 5px;
+  align-self: flex-end;
+  font-family: font.$libre-font;
+  background-color: colors.$btn-color-active;
+  margin: 5px;
 }

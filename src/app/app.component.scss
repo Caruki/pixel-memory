@@ -2,6 +2,7 @@
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
+  justify-content: center;
   @media screen and (max-width: 650px) {
     width: 100%;
   }
@@ -13,15 +14,36 @@
   }
   @media screen and (min-width: 1200px) {
     width: 60%;
+    max-width: 900px;
   }
-
   margin: auto;
+
+  > * {
+    margin: 10px;
+  }
 }
 
 .card-grid {
-  min-width: 600px;
-
-  max-height: 600px;
+  @media screen and (max-width: 500px) {
+    width: 400px;
+    height: 450px;
+  }
+  @media screen and (min-width: 500px) {
+    width: 500px;
+    height: 500px;
+  }
+  @media screen and (min-width: 650px) {
+    width: 500px;
+    height: 500px;
+  }
+  @media screen and (min-width: 900px) {
+    width: 750px;
+    height: 600px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 750px;
+    height: 600px;
+  }
 }
 
 .header {

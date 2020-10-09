@@ -2,12 +2,26 @@
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
-  width: 80%;
+  @media screen and (max-width: 650px) {
+    width: 100%;
+  }
+  @media screen and (min-width: 650px) {
+    width: 80%;
+  }
+  @media screen and (min-width: 900px) {
+    width: 80%;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 60%;
+  }
+
   margin: auto;
 }
 
 .card-grid {
-  max-width: 770px;
+  min-width: 600px;
+
+  max-height: 600px;
 }
 
 .header {

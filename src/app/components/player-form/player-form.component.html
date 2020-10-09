@@ -1,8 +1,9 @@
+<label for="{{ title }}">Player No {{ title + 1 }}</label>
 <input
   [(ngModel)]="playerName"
   name="player-name"
   type="text"
-  id="player"
+  id="{{ title }}"
   [title]="title"
   (change)="onNameInput($event)"
 />

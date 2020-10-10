@@ -1,9 +1,12 @@
+@use "../../../styles/colors"  as colors;
+
 .flex-container {
   display: flex;
   flex-wrap: wrap;
   height: inherit;
   width: inherit;
   justify-content: center;
+  background-color: colors.$bg-color-dark;
 }
 
 .card-container {

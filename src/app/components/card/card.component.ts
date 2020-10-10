@@ -1,9 +1,8 @@
-import { ThrowStmt } from '@angular/compiler';
+import { trigger, transition, animate, style, keyframes, state } from '@angular/animations';
 import { Component, Input, OnInit } from '@angular/core';
 
 import { BoardService } from 'src/app/services/board.service';
 import { CardService } from 'src/app/services/card.service';
-import { PlayerService } from 'src/app/services/player.service';
 
 import { Card } from '../../models/card';
 

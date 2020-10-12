@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Player, IPlayer } from '../models/player';
+import { Player } from '../models/player';
 
 @Injectable({
   providedIn: 'root'

@@ -2,5 +2,6 @@
   <p [ngClass]="{ 'active': player.active }">
     {{ player.name }}
   </p>
-  <span>Points:</span><div>{{ player.points }}</div>
+  <div class="points" [ngClass]="{ 'active': player.active }"><span>Points:</span>{{ player.points }}</div>
+  
 

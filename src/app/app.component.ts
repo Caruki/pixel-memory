@@ -8,6 +8,6 @@ import { BoardService } from './services/board.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(public boardService: BoardService) {}
+  constructor() {}
   title = 'pixel-memory';
 }

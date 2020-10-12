@@ -8,13 +8,11 @@ export class BoardService {
   constructor() {}
 
   lockedBoard: boolean = false;
-  showBoard: boolean = false;
+  
 
   toggleLock() {
     this.lockedBoard = !this.lockedBoard;
   }
 
-  toggleShow() {
-    this.showBoard = !this.showBoard;
-  }
+ 
 }

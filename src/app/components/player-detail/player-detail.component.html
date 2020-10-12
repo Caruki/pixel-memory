@@ -1,4 +1,7 @@
-<h2 [ngClass]="{ 'active': player.active }">
-  {{ player.name }}
-</h2>
-<span>Points:</span>{{ player.points }}
+
+  <p [ngClass]="{ 'active': player.active }">
+    {{ player.name }}
+  </p>
+  <div class="points" [ngClass]="{ 'active': player.active }"><span>Points:</span>{{ player.points }}</div>
+  
+

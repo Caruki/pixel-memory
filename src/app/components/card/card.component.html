@@ -1,13 +1,20 @@
 <button
   [ngClass]="{
     'card-container': true,
-    'visible-mode': card.visible,
-    'hidden-mode': !card.visible,
     'flex-item': true
   }"
   [disabled]="boardService.lockedBoard || card.visible"
   title="{{ card.title }}"
   (click)="onCardClick(card)"
+  [@flip]="card.visible ? true : false"
 >
-  <img class="img" src="{{ card.img }}" />
+      <div class="flip-card-front">
+        <img class="img" src="{{ card.img }}" />
+      </div>
+      <div class="flip-card-back">
+         <img class="img" src="../../../assets/imgs/backface.png">
+      </div>
+ 
+
+  
 </button>

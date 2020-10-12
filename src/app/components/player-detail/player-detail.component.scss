@@ -1,3 +1,18 @@
+@use "../../../styles/typography" as fonts;
+@use "../../../styles/colors"  as colors;
+
+p {
+  font-size: 2.3rem;
+  margin: 5px;
+}
+
 .active {
-  color: red;
+  color: colors.$text-color-active;
+  text-shadow: 0px 0px 4px colors.$text-shadow-active;
+}
+
+.points {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
 }

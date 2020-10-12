@@ -93,6 +93,6 @@ export class CardService {
       this.clickedFirst = undefined;
       this.clickedSecond = undefined;
       this.boardService.toggleLock();
-    }, 550);
+    }, 1800);
   }
 }

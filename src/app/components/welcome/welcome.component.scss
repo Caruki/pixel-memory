@@ -78,7 +78,8 @@
   background-color: colors.$btn-color-active;
 }
 
-#btn-submit:disabled {
+#btn-submit:disabled,
+#btn-start:disabled {
   background-color: colors.$btn-color-disabled;
 }
 

@@ -59,27 +59,11 @@ export class CardService {
     if (this.clickedFirst.title === this.clickedSecond.title) {
       this.isMatch = true;
       this.playerService.incPlayerPoints();
-      console.log(
-        'first:',
-        this.clickedFirst.title,
-        'second:',
-        this.clickedSecond.title,
-        'ismatch?',
-        this.isMatch
-      );
       this.clickedFirst = undefined;
       this.clickedSecond = undefined;
       this.boardService.toggleLock();
     } else {
       this.isMatch = false;
-      console.log(
-        'first:',
-        this.clickedFirst.title,
-        'second:',
-        this.clickedSecond.title,
-        'ismatch?',
-        this.isMatch
-      );
     }
 
     return this.isMatch;

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { GameService } from 'src/app/services/game.service';
 import { PlayerService } from 'src/app/services/player.service';
 
 @Component({
@@ -7,7 +8,10 @@ import { PlayerService } from 'src/app/services/player.service';
   styleUrls: ['./player-form.component.scss']
 })
 export class PlayerFormComponent implements OnInit {
-  constructor(private playerService: PlayerService) {}
+  constructor(
+    private playerService: PlayerService,
+    private gameService: GameService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -18,21 +22,21 @@ export class PlayerFormComponent implements OnInit {
   onNameInput(event) {
     switch (this.title) {
       case 0:
-        this.playerService.playerList[0].name = this.playerName;
+        this.playerService.playerNameList[0] = this.playerName;
         break;
       case 1:
-        this.playerService.playerList[1].name = this.playerName;
+        this.playerService.playerNameList[1] = this.playerName;
         break;
       case 2:
-        this.playerService.playerList[2].name = this.playerName;
+        this.playerService.playerNameList[2] = this.playerName;
         break;
       case 3:
-        this.playerService.playerList[3].name = this.playerName;
+        this.playerService.playerNameList[3] = this.playerName;
         break;
       case 4:
-        this.playerService.playerList[4].name = this.playerName;
+        this.playerService.playerNameList[4] = this.playerName;
         break;
-      default:
     }
+    this.gameService.checkGameActive();
   }
 }

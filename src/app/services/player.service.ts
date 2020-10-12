@@ -8,15 +8,23 @@ import { Player, IPlayer } from '../models/player';
 export class PlayerService {
   constructor() {}
 
-  playerCount: number;
+  playerNumber: number = 0;
 
+  playerNameList: string[] = [];
   playerList: Player[] = [];
 
   initPlayers(playerCount) {
     for (let i = 1; i <= playerCount; i++) {
       let player = new Player();
       this.playerList.push(player);
+      this.playerNumber++;
     }
+  }
+
+  setPlayers(playerNameList) {
+    this.playerList.forEach(function (value, index) {
+      value.name = playerNameList[index];
+    });
   }
 
   switchPlayer() {

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BoardService } from 'src/app/services/board.service';
+import { GameService } from 'src/app/services/game.service';
 import { PlayerService } from 'src/app/services/player.service';
 
 @Component({
@@ -12,16 +13,16 @@ export class WelcomeComponent implements OnInit {
   constructor(
     private router: Router,
     public playerService: PlayerService,
-    private boardService: BoardService
+    public gameService: GameService
   ) {}
 
   ngOnInit(): void {}
 
-  playerCount: number;
-  chosenName: string;
-  showGame: boolean = false;
+  @Input() playerNameList: string[];
 
-  setName(value: object) {}
+  playerCount: number;
+
+  setName(event) {}
 
   onSubmit() {
     this.playerService.initPlayers(this.playerCount);
@@ -29,6 +30,7 @@ export class WelcomeComponent implements OnInit {
 
   startGame() {
     this.playerService.playerList[0].active = true;
+    this.playerService.setPlayers(this.playerService.playerNameList);
     this.router.navigate(['/game']);
   }
 }

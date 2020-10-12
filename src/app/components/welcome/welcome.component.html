@@ -21,13 +21,13 @@
   <form class="start-form" (ngSubmit)="startGame()">
     <div class="playername-container">
       <app-player-form
-        (inputName)="setName($event)"
+        (nameInput)="setName($event)"
         *ngFor="let player of playerService.playerList; let i = index"
         [title]="i"
         class="player-form"
       ></app-player-form>
     </div>
-    <button id="btn-start" *ngIf="playerService.playerList[0]" type="submit">
+    <button id="btn-start" [disabled]="!gameService.gameActive" *ngIf="playerService.playerList[0]" type="submit">
       Start Game
     </button>
   </form>

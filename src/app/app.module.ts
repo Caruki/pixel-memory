@@ -16,6 +16,7 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { PlayerFormComponent } from './components/player-form/player-form.component';
 import { PlayerDetailComponent } from './components/player-detail/player-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GameComponent } from './components/game/game.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     WelcomeComponent,
     PlayerFormComponent,
-    PlayerDetailComponent
+    PlayerDetailComponent,
+    GameComponent
   ],
   imports: [
     BrowserModule,

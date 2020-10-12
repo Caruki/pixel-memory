@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BoardService } from 'src/app/services/board.service';
 import { PlayerService } from 'src/app/services/player.service';
 
@@ -9,6 +10,7 @@ import { PlayerService } from 'src/app/services/player.service';
 })
 export class WelcomeComponent implements OnInit {
   constructor(
+    private router: Router,
     public playerService: PlayerService,
     private boardService: BoardService
   ) {}
@@ -27,6 +29,6 @@ export class WelcomeComponent implements OnInit {
 
   startGame() {
     this.playerService.playerList[0].active = true;
-    this.boardService.toggleShow();
+    this.router.navigate(['/game']);
   }
 }

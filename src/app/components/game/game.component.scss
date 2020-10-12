@@ -1,0 +1,30 @@
+@use "../../../styles/colors"  as colors;
+
+.card-grid {
+  @media screen and (max-width: 500px) {
+    width: 400px;
+    height: 450px;
+  }
+  @media screen and (min-width: 500px) {
+    width: 500px;
+    height: 500px;
+  }
+  @media screen and (min-width: 650px) {
+    width: 500px;
+    height: 500px;
+  }
+  @media screen and (min-width: 900px) {
+    width: 750px;
+    height: 600px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 750px;
+    height: 600px;
+  }
+}
+
+.game-container {
+  background-color: colors.$bg-color-dark;
+  margin: 10px;
+  padding: 10px;
+}

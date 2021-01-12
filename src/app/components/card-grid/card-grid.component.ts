@@ -37,17 +37,17 @@ export class CardGridComponent implements OnInit {
   }
 
   shuffle(array) {
-    let i = array.length,
-      j = 0,
+    let currentIndex = array.length,
+      randomIndex = 0,
       temp;
 
-    while (i--) {
-      j = Math.floor(Math.random() * (i + 1));
+    while (currentIndex--) {
+      randomIndex = Math.floor(Math.random() * (currentIndex + 1));
 
       // swap randomly chosen element with current element
-      temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
+      temp = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temp;
     }
 
     return array;

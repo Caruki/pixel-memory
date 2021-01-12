@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Card } from '../models/card';
 import { BoardService } from './board.service';
@@ -59,27 +59,11 @@ export class CardService {
     if (this.clickedFirst.title === this.clickedSecond.title) {
       this.isMatch = true;
       this.playerService.incPlayerPoints();
-      console.log(
-        'first:',
-        this.clickedFirst.title,
-        'second:',
-        this.clickedSecond.title,
-        'ismatch?',
-        this.isMatch
-      );
       this.clickedFirst = undefined;
       this.clickedSecond = undefined;
       this.boardService.toggleLock();
     } else {
       this.isMatch = false;
-      console.log(
-        'first:',
-        this.clickedFirst.title,
-        'second:',
-        this.clickedSecond.title,
-        'ismatch?',
-        this.isMatch
-      );
     }
 
     return this.isMatch;
@@ -93,6 +77,6 @@ export class CardService {
       this.clickedFirst = undefined;
       this.clickedSecond = undefined;
       this.boardService.toggleLock();
-    }, 1800);
+    }, 1500);
   }
 }

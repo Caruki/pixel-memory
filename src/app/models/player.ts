@@ -1,5 +1,3 @@
-import { disableDebugTools } from '@angular/platform-browser';
-
 export interface IPlayer {
   name: string;
   points: number;

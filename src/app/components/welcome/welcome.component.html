@@ -14,7 +14,11 @@
       min="2"
       max="4"
     />
-    <button id="btn-submit" [disabled]="!playerCount" type="submit">
+    <button
+      id="btn-submit"
+      [disabled]="!playerCount || playerService.playerList[0]"
+      type="submit"
+    >
       Submit
     </button>
   </form>
@@ -27,7 +31,12 @@
         class="player-form"
       ></app-player-form>
     </div>
-    <button id="btn-start" [disabled]="!gameService.gameActive" *ngIf="playerService.playerList[0]" type="submit">
+    <button
+      id="btn-start"
+      [disabled]="!gameService.gameActive"
+      *ngIf="playerService.playerList[0]"
+      type="submit"
+    >
       Start Game
     </button>
   </form>
